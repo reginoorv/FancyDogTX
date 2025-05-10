@@ -13,7 +13,7 @@ const services = [
     icon: <Scissors className="h-6 w-6" />
   },
   {
-    image: 'https://images.pexels.com/photos/6568953/pexels-photo-6568953.jpeg?auto=compress&cs=tinysrgb&w=800&h=500',
+    image: 'https://img-cdn.medkomtek.com/k7F4N2-in4q3hbRob_jSMrB6bT0=/690x387/smart/filters:quality(100):format(webp)/article/qKj_I1WnH0_PjmoyZQRTt/original/1673150337-Agar%20Anabul%20Bersih%20dan%20Sehat,%20Ini%20Cara%20Grooming%20Anjing.jpg',
     title: 'Full Grooming',
     description: 'Complete bath, breed-specific or custom haircut, ear cleaning, nail trimming, and styling.',
     price: 'Starting at $75',
@@ -21,7 +21,7 @@ const services = [
     icon: <Bath className="h-6 w-6" />
   },
   {
-    image: 'https://images.pexels.com/photos/5733201/pexels-photo-5733201.jpeg?auto=compress&cs=tinysrgb&w=800&h=500',
+    image: 'https://bottletreeanimalhospital.com/wp-content/uploads/2024/05/pet-nail-trimming.jpg',
     title: 'Nail Trimming',
     description: 'Quick and gentle nail trim to keep your dog comfortable and prevent health issues.',
     price: 'Starting at $20',
@@ -37,7 +37,7 @@ const services = [
     icon: <Heart className="h-6 w-6" />
   },
   {
-    image: 'https://images.pexels.com/photos/6131186/pexels-photo-6131186.jpeg?auto=compress&cs=tinysrgb&w=800&h=500',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROw0z2UItBGu5YpUHNahHzvocqKrtrXrEgSkg5rQcesFalYJ4AnZehjEHLs3mim6Rfdxc&usqp=CAU',
     title: 'De-shedding Treatment',
     description: 'Special treatment to remove loose undercoat and reduce shedding dramatically.',
     price: 'Starting at $30',

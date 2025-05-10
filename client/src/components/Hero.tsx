@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       id="home" 
       className="relative pt-20 md:pt-0 h-screen bg-cover bg-center" 
       style={{ 
-        backgroundImage: "url('https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80')" 
+        backgroundImage: "url('https://images.pexels.com/photos/2523934/pexels-photo-2523934.jpeg?auto=compress&cs=tinysrgb&w=1770&h=900&dpr=1')" 
       }}
     >
       <div className="absolute inset-0 bg-dark bg-opacity-70"></div>

@@ -1,42 +1,78 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X } from 'lucide-react';
 
 const galleryImages = [
   {
     src: 'https://images.unsplash.com/photo-1593620659530-7f98c53de278?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Groomed Bichon Frise'
+    alt: 'Groomed Bichon Frise',
+    category: 'small'
   },
   {
     src: 'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Styled Poodle'
+    alt: 'Styled Poodle',
+    category: 'medium'
   },
   {
     src: 'https://images.unsplash.com/photo-1558929996-da64ba858215?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Clean Golden Retriever'
+    alt: 'Golden Retriever After Grooming',
+    category: 'large'
   },
   {
-    src: 'https://pixabay.com/get/ge2b263210440bb5c405c6f945c261e5351bb84f21818e4b718939439db94be71804738726d42911ba5b09b3a280624bbbfa59b46abd9bf7cf931755afed7f6c1_1280.jpg',
-    alt: 'Groomed Yorkshire Terrier'
+    src: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Mobile Grooming Unit',
+    category: 'mobile'
   },
   {
     src: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Styled Shih Tzu'
+    alt: 'Styled Shih Tzu',
+    category: 'small'
   },
   {
-    src: 'https://images.unsplash.com/photo-1537204696486-967f1b7198c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Groomed Schnauzer'
+    src: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Groomed Schnauzer with Bow',
+    category: 'medium'
   },
   {
     src: 'https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Maltese Summer Cut'
+    alt: 'Maltese Summer Cut',
+    category: 'small'
   },
   {
-    src: 'https://images.unsplash.com/photo-1605897472359-85e4b94d685d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
-    alt: 'Clean Labrador'
+    src: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Dog Getting Bathed',
+    category: 'bathing'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Brushing Session',
+    category: 'grooming'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1581131131582-573e9c7a1fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Mobile Grooming Van',
+    category: 'mobile'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1594739297262-188737d6d9db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Poodle Getting Hair Cut',
+    category: 'grooming'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1583336663277-620dc1996580?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    alt: 'Dog Getting Dried After Bath',
+    category: 'bathing'
   }
 ];
 
 const Gallery: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [category, setCategory] = useState<string | null>(null);
+  
+  const filteredImages = category 
+    ? galleryImages.filter(image => image.category === category) 
+    : galleryImages;
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -58,15 +94,73 @@ const Gallery: React.FC = () => {
     }
   };
 
+  const categories = ['all', 'small', 'medium', 'large', 'mobile', 'bathing', 'grooming'];
+
   return (
-    <section id="gallery" className="py-16 bg-neutral">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Our Gallery</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            See our work and the happy pups we've had the pleasure of grooming.
-          </p>
-        </div>
+    <section id="gallery" className="py-20 bg-neutral">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.span 
+            className="text-secondary font-medium mb-2 inline-block"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            OUR WORK
+          </motion.span>
+          <motion.h2 
+            className="text-3xl md:text-5xl font-heading font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Pet Grooming Gallery
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-2xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            See the transformations and happy pets we've had the pleasure of grooming with our mobile salon.
+          </motion.p>
+          
+          <motion.div 
+            className="flex flex-wrap justify-center gap-2 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {categories.map((cat, index) => (
+              <motion.button
+                key={cat}
+                onClick={() => setCategory(cat === 'all' ? null : cat)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  (cat === 'all' && category === null) || category === cat
+                    ? 'bg-secondary text-white'
+                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index, duration: 0.3 }}
+              >
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </motion.button>
+            ))}
+          </motion.div>
+        </motion.div>
         
         <motion.div 
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
@@ -74,21 +168,74 @@ const Gallery: React.FC = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
+          layout
         >
-          {galleryImages.map((image, index) => (
-            <motion.div 
-              key={index} 
-              className="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all"
-              variants={item}
-            >
-              <img 
-                src={image.src} 
-                alt={image.alt} 
-                className="w-full h-64 object-cover transform hover:scale-105 transition-all"
-              />
-            </motion.div>
-          ))}
+          <AnimatePresence>
+            {filteredImages.map((image, index) => (
+              <motion.div 
+                key={image.src} 
+                className="overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                variants={item}
+                layout
+                onClick={() => setSelectedImage(image.src)}
+                whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+                exit={{ opacity: 0, scale: 0.8 }}
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-4 w-full">
+                      <p className="text-white text-sm font-medium">{image.alt}</p>
+                      <span className="text-secondary text-xs uppercase bg-white/80 px-2 py-1 rounded-full mt-2 inline-block">
+                        {image.category}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
+        
+        {/* Image Lightbox */}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div 
+              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+            >
+              <motion.div
+                className="relative max-w-4xl w-full"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 20 }}
+              >
+                <button 
+                  className="absolute top-4 right-4 bg-white rounded-full p-2 z-10"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage(null);
+                  }}
+                >
+                  <X size={20} />
+                </button>
+                <img 
+                  src={selectedImage} 
+                  alt="Enlarged view" 
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

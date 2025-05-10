@@ -4,62 +4,62 @@ import { X } from 'lucide-react';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1593620659530-7f98c53de278?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/5255555/pexels-photo-5255555.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Groomed Bichon Frise',
     category: 'small'
   },
   {
-    src: 'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/5733207/pexels-photo-5733207.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Styled Poodle',
     category: 'medium'
   },
   {
-    src: 'https://images.unsplash.com/photo-1558929996-da64ba858215?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/2523934/pexels-photo-2523934.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Golden Retriever After Grooming',
     category: 'large'
   },
   {
-    src: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/7210754/pexels-photo-7210754.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Mobile Grooming Unit',
     category: 'mobile'
   },
   {
-    src: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/1458916/pexels-photo-1458916.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Styled Shih Tzu',
     category: 'small'
   },
   {
-    src: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/4588435/pexels-photo-4588435.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Groomed Schnauzer with Bow',
     category: 'medium'
   },
   {
-    src: 'https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/982299/pexels-photo-982299.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Maltese Summer Cut',
     category: 'small'
   },
   {
-    src: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/3198032/pexels-photo-3198032.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Dog Getting Bathed',
     category: 'bathing'
   },
   {
-    src: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/6131186/pexels-photo-6131186.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Brushing Session',
     category: 'grooming'
   },
   {
-    src: 'https://images.unsplash.com/photo-1581131131582-573e9c7a1fce?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/7210280/pexels-photo-7210280.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Mobile Grooming Van',
     category: 'mobile'
   },
   {
-    src: 'https://images.unsplash.com/photo-1594739297262-188737d6d9db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/6568953/pexels-photo-6568953.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Poodle Getting Hair Cut',
     category: 'grooming'
   },
   {
-    src: 'https://images.unsplash.com/photo-1583336663277-620dc1996580?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=500',
+    src: 'https://images.pexels.com/photos/14710661/pexels-photo-14710661.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
     alt: 'Dog Getting Dried After Bath',
     category: 'bathing'
   }

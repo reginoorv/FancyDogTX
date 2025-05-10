@@ -8,28 +8,28 @@ const testimonials = [
     author: "Maria R.",
     location: "Dallas, TX",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1583512603806-077998240c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.pexels.com/photos/1612846/pexels-photo-1612846.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
   },
   {
     text: "The convenience of having the groomer come to us is incredible. My senior Labrador Max gets anxious in traditional grooming environments, but with Fancy Dog TX, he stays calm and comfortable in familiar surroundings.",
     author: "Robert T.",
     location: "Fort Worth, TX",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.pexels.com/photos/1906153/pexels-photo-1906153.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
   },
   {
     text: "I've tried several mobile groomers, but Fancy Dog TX stands out with their attention to detail and genuine care for pets. My Yorkshire Terrier Daisy looks absolutely stunning after every appointment. Their de-shedding treatment is a game-changer!",
     author: "Jennifer K.",
     location: "Arlington, TX",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1605496036883-20471d153ee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.pexels.com/photos/10651529/pexels-photo-10651529.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
   },
   {
     text: "The groomers are so professional and knowledgeable. They took the time to understand my pup's specific needs and preferences. The convenience of their mobile service is unmatched, and the results are always fantastic!",
     author: "Carlos M.",
     location: "Irving, TX",
     rating: 5,
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.pexels.com/photos/5731879/pexels-photo-5731879.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1"
   }
 ];
 

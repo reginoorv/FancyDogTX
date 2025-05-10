@@ -9,7 +9,7 @@ const galleryImages = [
     category: 'small'
   },
   {
-    src: 'https://images.pexels.com/photos/5733207/pexels-photo-5733207.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
+    src: 'https://static.wixstatic.com/media/e8a043_75e58c7a6a8a48b88432be68bb8647d0~mv2.jpg/v1/fill/w_556,h_774,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/e8a043_75e58c7a6a8a48b88432be68bb8647d0~mv2.jpg',
     alt: 'Styled Poodle',
     category: 'medium'
   },
@@ -34,7 +34,7 @@ const galleryImages = [
     category: 'medium'
   },
   {
-    src: 'https://images.pexels.com/photos/982299/pexels-photo-982299.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
+    src: 'https://i0.wp.com/www.rootfamilyreview.com/wp-content/uploads/2017/02/Summer-After-e1490664027233.jpg?fit=600%2C861&ssl=1',
     alt: 'Maltese Summer Cut',
     category: 'small'
   },
@@ -54,12 +54,12 @@ const galleryImages = [
     category: 'mobile'
   },
   {
-    src: 'https://images.pexels.com/photos/6568953/pexels-photo-6568953.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV5zl4vC0DJXl-4OeKG8fZHX2ZXdO4lGToHg&s',
     alt: 'Poodle Getting Hair Cut',
     category: 'grooming'
   },
   {
-    src: 'https://images.pexels.com/photos/14710661/pexels-photo-14710661.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWy6CvuWSoV1TCwEobQ9PKBY48bKWTGzV-vrP7EAYAFMZjoA_POzczhGLtplqg4N9yEUc&usqp=CAU',
     alt: 'Dog Getting Dried After Bath',
     category: 'bathing'
   }

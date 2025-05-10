@@ -44,7 +44,7 @@ const galleryImages = [
     category: 'bathing'
   },
   {
-    src: 'https://images.pexels.com/photos/6131186/pexels-photo-6131186.jpeg?auto=compress&cs=tinysrgb&w=500&h=500',
+    src: 'https://bullystickscentral.com/cdn/shop/articles/brushing-dog-teeth-tips-tricks-and-treats-870869.png?v=1696102638',
     alt: 'Brushing Session',
     category: 'grooming'
   },

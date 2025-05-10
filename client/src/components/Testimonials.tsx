@@ -1,27 +1,41 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "My Shih Tzu Bella looks amazing after every visit to Fancy Dog TX! The groomers are patient with her and always give her the perfect cut. I wouldn't take her anywhere else!",
-    author: "Sarah M.",
-    rating: 5
+    text: "I was so impressed with Fancy Dog TX's mobile grooming service! They came right to my doorstep, and my anxious Goldendoodle Bella had such a positive experience without the stress of traveling to a salon.",
+    author: "Maria R.",
+    location: "Dallas, TX",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1583512603806-077998240c7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
-    text: "Our Golden Retriever Max has anxiety around grooming, but the team at Fancy Dog TX is so gentle and patient with him. He's actually excited to go now, which says everything!",
+    text: "The convenience of having the groomer come to us is incredible. My senior Labrador Max gets anxious in traditional grooming environments, but with Fancy Dog TX, he stays calm and comfortable in familiar surroundings.",
     author: "Robert T.",
-    rating: 5
+    location: "Fort Worth, TX",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
-    text: "I've been taking my Yorkie to Fancy Dog TX for over 3 years now. They always remember her preferences and give her the exact style I ask for. Great attention to detail!",
+    text: "I've tried several mobile groomers, but Fancy Dog TX stands out with their attention to detail and genuine care for pets. My Yorkshire Terrier Daisy looks absolutely stunning after every appointment. Their de-shedding treatment is a game-changer!",
     author: "Jennifer K.",
-    rating: 5
+    location: "Arlington, TX",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1605496036883-20471d153ee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
+  },
+  {
+    text: "The groomers are so professional and knowledgeable. They took the time to understand my pup's specific needs and preferences. The convenience of their mobile service is unmatched, and the results are always fantastic!",
+    author: "Carlos M.",
+    location: "Irving, TX",
+    rating: 5,
+    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&h=150&q=80"
   }
 ];
 
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const resetTimeout = () => {
@@ -31,97 +45,166 @@ const Testimonials: React.FC = () => {
   };
 
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 6000);
+    if (isAutoPlaying) {
+      resetTimeout();
+      timeoutRef.current = setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      }, 8000);
+    }
 
     return () => {
       resetTimeout();
     };
-  }, [currentIndex]);
+  }, [currentIndex, isAutoPlaying]);
 
   const handlePrev = () => {
+    setIsAutoPlaying(false);
     resetTimeout();
     setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
   };
 
   const handleNext = () => {
+    setIsAutoPlaying(false);
     resetTimeout();
     setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
   };
 
   const goToSlide = (index: number) => {
+    setIsAutoPlaying(false);
     resetTimeout();
     setCurrentIndex(index);
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from the happy pet parents who trust us with their furry family members.
-          </p>
-        </div>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <motion.span 
+            className="text-secondary font-medium mb-2 inline-block"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            TESTIMONIALS
+          </motion.span>
+          <motion.h2 
+            className="text-3xl md:text-5xl font-heading font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            What Our Clients Say
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            Hear from the happy pet parents who trust us with their furry family members
+          </motion.p>
+        </motion.div>
         
-        <div className="relative testimonial-slider max-w-4xl mx-auto">
-          <div className="overflow-hidden">
+        <div className="relative testimonial-slider max-w-5xl mx-auto">
+          <motion.div 
+            className="overflow-hidden pb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.5 }}
-                className="md:px-12"
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="md:px-8"
               >
-                <div className="bg-neutral p-6 md:p-8 rounded-lg shadow-md">
-                  <div className="text-secondary text-2xl mb-4 flex justify-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-                      <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16.032-.52.112-1.09.239-.71.157-1.243.252-1.6.283L4.868 10.9c1.257-.534 2.79-.82 4.6-.86 1.007-.03 1.945.17 2.814.6.87.43 1.543 1.026 2.02 1.79.478.767.716 1.61.716 2.53 0 .908-.17 1.747-.502 2.518-.332.772-.77 1.368-1.317 1.79-.545.42-1.34.629-2.39.629-1.156 0-2.031-.247-2.627-.74-.595-.494-.892-1.18-.892-2.06 0-.477.122-.904.366-1.28.246-.377.62-.686 1.127-.93.76-.38 1.58-.65 2.46-.81.38-.065.65-.116.795-.154zm6.695.194c0-.773-.207-1.458-.62-2.054-.414-.597-.94-.978-1.58-1.144a5.19 5.19 0 00-1.626-.139c-.592.032-1.19.117-1.793.26-.602.143-1.08.26-1.432.354l-.31-2.292c1.09-.363 2.383-.622 3.88-.777.413-.045 1.11-.03 2.095.044.984.073 1.86.566 2.628 1.48.768.913 1.152 1.98 1.152 3.204 0 1.202-.287 2.176-.86 2.922-.574.747-1.277 1.255-2.108 1.524-.83.27-1.83.404-2.998.404-1.506 0-2.675-.328-3.507-.984-.83-.657-1.247-1.595-1.247-2.814 0-.517.143-.984.427-1.402.285-.418.634-.733 1.046-.946.847-.426 1.766-.732 2.754-.918.377-.075.75-.14 1.116-.195z"></path>
-                    </svg>
-                  </div>
-                  <p className="text-gray-600 mb-6 italic text-lg">
-                    {testimonials[currentIndex].text}
-                  </p>
-                  <div className="flex items-center">
-                    <div className="text-yellow-400 mr-2 flex">
-                      {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                        <Star key={i} className="fill-current" />
-                      ))}
+                <div className="bg-neutral p-8 md:p-10 rounded-xl shadow-xl relative">
+                  <Quote className="absolute text-secondary/10 w-24 h-24 -top-6 -left-6" />
+                  
+                  <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+                    <div className="md:w-1/4 flex flex-col items-center md:items-start">
+                      <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-white shadow-md">
+                        <img
+                          src={testimonials[currentIndex].image}
+                          alt={`Photo of ${testimonials[currentIndex].author}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <h4 className="font-bold text-lg">{testimonials[currentIndex].author}</h4>
+                      <p className="text-gray-500 text-sm">{testimonials[currentIndex].location}</p>
+                      <div className="text-yellow-400 mt-2 flex">
+                        {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                          <Star key={i} className="fill-current w-4 h-4" />
+                        ))}
+                      </div>
                     </div>
-                    <p className="font-bold">- {testimonials[currentIndex].author}</p>
+                    
+                    <div className="md:w-3/4">
+                      <p className="text-gray-700 text-lg md:text-xl italic leading-relaxed">
+                        "{testimonials[currentIndex].text}"
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
+          </motion.div>
           
-          <button 
-            className="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none"
+          <motion.button 
+            className="absolute top-1/2 -left-3 md:-left-5 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center focus:outline-none z-10"
             onClick={handlePrev}
             aria-label="Previous testimonial"
+            whileHover={{ scale: 1.1, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, x: -10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
           >
             <ChevronLeft className="text-primary" />
-          </button>
-          <button 
-            className="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-md flex items-center justify-center focus:outline-none"
+          </motion.button>
+          <motion.button 
+            className="absolute top-1/2 -right-3 md:-right-5 transform -translate-y-1/2 bg-white rounded-full w-10 h-10 shadow-lg flex items-center justify-center focus:outline-none z-10"
             onClick={handleNext}
             aria-label="Next testimonial"
+            whileHover={{ scale: 1.1, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, x: 10 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
           >
             <ChevronRight className="text-primary" />
-          </button>
+          </motion.button>
           
           <div className="flex justify-center mt-8">
             {testimonials.map((_, index) => (
-              <button 
+              <motion.button 
                 key={index} 
-                className={`w-3 h-3 rounded-full mx-1 focus:outline-none transition-colors duration-300 ${index === currentIndex ? 'bg-primary' : 'bg-gray-300'}`}
+                className={`w-3 h-3 rounded-full mx-2 focus:outline-none transition-colors duration-300 ${
+                  index === currentIndex ? 'bg-secondary' : 'bg-gray-300'
+                }`}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
-              ></button>
+                whileHover={{ scale: 1.5 }}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.9 + index * 0.1 }}
+              ></motion.button>
             ))}
           </div>
         </div>

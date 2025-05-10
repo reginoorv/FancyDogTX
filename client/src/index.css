@@ -13,27 +13,27 @@
   --card-foreground: 20 14.3% 4.1%;
   --border: 20 5.9% 90%;
   --input: 20 5.9% 90%;
-  --primary: 207 90% 54%; /* #4F7CAC */
-  --primary-foreground: 211 100% 99%;
-  --secondary: 33 88% 58%; /* #F29E38 */
-  --secondary-foreground: 24 9.8% 10%;
-  --accent: 135 43% 74%; /* #A4D4B4 */
-  --accent-foreground: 24 9.8% 10%;
+  --primary: 210 100% 33%; /* #005cb2 - Deep Blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24 100% 50%; /* #ff8000 - Orange */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 163 73% 46%; /* #18c4a0 - Turquoise */
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 60 9.1% 97.8%;
-  --ring: 20 14.3% 4.1%;
+  --ring: 210 100% 33%;
   --radius: 0.5rem;
-  --chart-1: 207 90% 54%;
-  --chart-2: 33 88% 58%;
-  --chart-3: 135 43% 74%;
+  --chart-1: 210 100% 33%;
+  --chart-2: 24 100% 50%;
+  --chart-3: 163 73% 46%;
   --chart-4: 0 0% 98%;
   --chart-5: 240 5% 64.9%;
   --sidebar-background: 0 0% 100%;
   --sidebar-foreground: 20 14.3% 4.1%;
-  --sidebar-primary: 207 90% 54%;
+  --sidebar-primary: 210 100% 33%;
   --sidebar-primary-foreground: 0 0% 98%;
-  --sidebar-accent: 135 43% 74%;
-  --sidebar-accent-foreground: 24 9.8% 10%;
+  --sidebar-accent: 163 73% 46%;
+  --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 20 5.9% 90%;
   --sidebar-ring: 20 14.3% 4.1%;
 }
@@ -49,16 +49,18 @@
   --card-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
-  --primary: 207 90% 54%;
-  --primary-foreground: 211 100% 99%;
-  --secondary: 33 88% 58%;
-  --secondary-foreground: 0 0% 98%;
-  --accent: 135 43% 74%;
-  --accent-foreground: 0 0% 98%;
+  --primary: 210 100% 33%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 163 73% 46%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   --ring: 240 4.9% 83.9%;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Pacifico&display=swap');
 
 @layer base {
   * {
@@ -74,9 +76,6 @@
     @apply font-heading;
   }
 }
-
-/* Custom font families */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&family=Pacifico&display=swap');
 
 @layer components {
   .font-heading {

@@ -214,10 +214,10 @@ const Contact: React.FC = () => {
                     <MapPin />
                   </div>
                   <div>
-                    <h4 className="font-bold">Address</h4>
+                    <h4 className="font-bold">Serving Area</h4>
                     <p className="text-gray-600">
-                      123 Main Street<br />
-                      Haslet, TX 76052
+                      Dallas-Fort Worth Metroplex<br />
+                      Mobile Services - We Come To You!
                     </p>
                   </div>
                 </div>
@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="font-bold">Phone</h4>
                     <p className="text-gray-600">
-                      <a href="tel:+19725551234" className="hover:text-primary">(972) 555-1234</a>
+                      <a href="tel:+12145771010" className="hover:text-primary">(214) 577-1010</a>
                     </p>
                   </div>
                 </div>
@@ -288,14 +288,14 @@ const Contact: React.FC = () => {
               viewport={{ once: true }}
             >
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106972.61202982033!2d-97.42108147566547!3d32.970732596248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864dd0e031b221ab%3A0xb8b11e7af0171be0!2sHaslet%2C%20TX%2076052!5e0!3m2!1sen!2sus!4v1710428976351!5m2!1sen!2sus" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d429593.2770419584!2d-97.48243908394653!3d32.8208570915469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e6e122dc807ad%3A0xa4af8bf8dd69acbd!2sDallas-Fort%20Worth%20Metroplex%2C%20TX!5e0!3m2!1sen!2sus!4v1684345776359!5m2!1sen!2sus" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Maps - Fancy Dog TX Location"
+                title="Google Maps - Fancy Dog TX Service Area"
               ></iframe>
             </motion.div>
           </div>
